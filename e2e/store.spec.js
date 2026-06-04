@@ -7,13 +7,13 @@ test('user can browse, login, add to cart, checkout, and see purchase history', 
   await page.getByRole('button', { name: 'Login' }).click();
   await page.getByLabel('Email').fill('user@store.com');
   await page.getByLabel('Password').fill('user123');
-  await page.getByRole('button', { name: /^login$/i }).click();
+  await page.locator('form').getByRole('button', { name: /^login$/i }).click();
 
   await expect(page.getByText(/Test User/i)).toBeVisible();
   await page.getByLabel(/Add Wireless Headphones to cart/i).click();
   await expect(page.getByText(/Added to cart/i)).toBeVisible();
 
-  await page.getByRole('button', { name: /Cart/i }).click();
+  await page.getByRole('button', { name: /^Cart \(\d+\)$/i }).click();
   await expect(page.getByRole('heading', { name: /Shopping Cart/i })).toBeVisible();
   await page.getByRole('button', { name: /Complete purchase/i }).click();
   await expect(page.getByText(/Payment successful/i)).toBeVisible();
@@ -28,7 +28,7 @@ test('admin can view dashboard and product management', async ({ page }) => {
   await page.getByRole('button', { name: 'Login' }).click();
   await page.getByLabel('Email').fill('admin@store.com');
   await page.getByLabel('Password').fill('admin123');
-  await page.getByRole('button', { name: /^login$/i }).click();
+  await page.locator('form').getByRole('button', { name: /^login$/i }).click();
 
   await page.getByRole('button', { name: /Admin Dashboard/i }).click();
   await expect(page.getByRole('heading', { name: /Admin Dashboard/i })).toBeVisible();
