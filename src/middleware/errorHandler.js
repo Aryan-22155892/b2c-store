@@ -5,8 +5,10 @@ const notFound = (req, res) => {
 };
 
 const errorHandler = (err, req, res, next) => {
-  console.error(err);
-
+  if (process.env.NODE_ENV !== "test") {
+    console.error(err);
+  }
+  
   // Prisma known request errors (e.g. unique constraint violation)
   if (err instanceof Prisma.PrismaClientKnownRequestError) {
     if (err.code === 'P2002') {
