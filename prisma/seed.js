@@ -6,6 +6,11 @@ const prisma = new PrismaClient();
 async function main() {
   console.log('Seeding database...');
 
+  await prisma.cartItem.deleteMany();
+  await prisma.orderItem.deleteMany();
+  await prisma.order.deleteMany();
+  await prisma.product.deleteMany();
+
   // Categories
   const categories = await Promise.all([
     prisma.category.upsert({
