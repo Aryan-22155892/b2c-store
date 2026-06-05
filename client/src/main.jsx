@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 
-const API_URL = import.meta.env.VITE_API_URL || '/api';
+const API_URL = "/api";
 
 function formatPrice(value) {
   return new Intl.NumberFormat('en-AU', { style: 'currency', currency: 'AUD' }).format(Number(value || 0));
