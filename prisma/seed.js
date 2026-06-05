@@ -41,7 +41,7 @@ async function main() {
         price: 149.99,
         stock: 50,
         categoryId: electronics.id,
-        imageUrl: 'https://placehold.co/400x300?text=Headphones',
+        imageUrl: '/products/wireless_headphones.webp',
       },
     }),
     prisma.product.create({
@@ -51,7 +51,7 @@ async function main() {
         price: 89.99,
         stock: 30,
         categoryId: electronics.id,
-        imageUrl: 'https://placehold.co/400x300?text=Keyboard',
+        imageUrl: '/products/mechanical_keyboard.webp',
       },
     }),
     prisma.product.create({
@@ -61,7 +61,7 @@ async function main() {
         price: 59.99,
         stock: 100,
         categoryId: clothing.id,
-        imageUrl: 'https://placehold.co/400x300?text=Jacket',
+        imageUrl: '/products/denim_jacket.webp',
       },
     }),
     prisma.product.create({
@@ -71,7 +71,7 @@ async function main() {
         price: 74.99,
         stock: 75,
         categoryId: clothing.id,
-        imageUrl: 'https://placehold.co/400x300?text=Sneakers',
+        imageUrl: '/products/running_sneakers.jpg',
       },
     }),
     prisma.product.create({
@@ -81,7 +81,7 @@ async function main() {
         price: 34.99,
         stock: 200,
         categoryId: books.id,
-        imageUrl: 'https://placehold.co/400x300?text=Book',
+        imageUrl: '/products/the_pragmatic_programmer.jpg',
       },
     }),
     prisma.product.create({
@@ -91,7 +91,7 @@ async function main() {
         price: 24.99,
         stock: 60,
         categoryId: homeGarden.id,
-        imageUrl: 'https://placehold.co/400x300?text=Pots',
+        imageUrl: '/products/indoor_plant.webp',
       },
     }),
   ]);
